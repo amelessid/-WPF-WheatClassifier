@@ -17,7 +17,7 @@ namespace WheatClassifier.Data
             int testSize,
             EvaluationResult eval)
         {
-            // Convertir int[,] -> int[][]
+          
             int n = eval.Confusion.GetLength(0);
             var jagged = new int[n][];
             for (int i = 0; i < n; i++)

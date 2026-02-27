@@ -4,7 +4,7 @@ namespace WheatClassifier.Classification
 {
     public static class GrainFeatures
     {
-        // 7 dimensions (0..6)
+
         public const int Dimensions = 7;
 
         public static double Get(Grain g, int axis) => axis switch

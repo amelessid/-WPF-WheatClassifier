@@ -11,17 +11,14 @@ namespace WheatClassifier.Classification
             if (classifier == null)
                 throw new ArgumentNullException(nameof(classifier));
 
-            // On définit l’ordre des classes (important pour une matrice stable)
             var labels = testSet
                 .Select(g => g.Label)
                 .Where(l => !string.IsNullOrWhiteSpace(l))
                 .Distinct(StringComparer.OrdinalIgnoreCase)
-                .OrderBy(l => l) // ordre alphabétique stable
+                .OrderBy(l => l) 
                 .ToArray()!;
 
-            // On force 3 classes si tu veux fixer l’ordre
-            // (décommente si ton prof exige Kama/Rosa/Canadian dans un ordre précis)
-            // var labels = new[] { "Kama", "Rosa", "Canadian" };
+
 
             var index = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
             for (int i = 0; i < labels.Length; i++)
@@ -34,7 +31,7 @@ namespace WheatClassifier.Classification
             foreach (var g in testSet)
             {
                 if (string.IsNullOrWhiteSpace(g.Label))
-                    continue; // impossible d’évaluer sans vrai label
+                    continue;
 
                 var predicted = classifier.Predict(g);
                 var actual = g.Label;
@@ -42,10 +39,9 @@ namespace WheatClassifier.Classification
                 if (!index.ContainsKey(actual))
                     continue;
 
-                // si le classifieur renvoie un label inattendu, on peut l’ignorer ou le traiter
+
                 if (!index.ContainsKey(predicted))
                 {
-                    // Ici: on ignore la prédiction hors labels
                     continue;
                 }
 

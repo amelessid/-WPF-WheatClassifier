@@ -1,5 +1,5 @@
-﻿using WheatClassifier.Classification; // pour Grain (si ton Grain est dans Classification)
-                                      // si ton Grain est dans Domain, ajuste le using.
+﻿using WheatClassifier.Classification; 
+                                     
 
 namespace WheatClassifier.Domain;
 
@@ -7,7 +7,7 @@ public sealed class GrainLot : IReportable
 {
     public string LotId { get; }
     public DateTime CreatedAt { get; }
-    public string? Variety { get; }   // ex: "Canadian", "Kama", "Rosa" (optionnel)
+    public string? Variety { get; }  
     public IReadOnlyList<Grain> Grains => _grains;
 
     private readonly List<Grain> _grains = new();

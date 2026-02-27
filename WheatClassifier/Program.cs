@@ -25,7 +25,6 @@ static void ShowConfusion(EvaluationResult eval)
 
     int n = labels.Length;
 
-    // Totaux lignes/colonnes
     var rowTotals = new int[n];
     var colTotals = new int[n];
     int grandTotal = 0;
@@ -55,7 +54,6 @@ static void ShowConfusion(EvaluationResult eval)
 
         for (int j = 0; j < n; j++)
         {
-            // Sur la diagonale = bonnes prédictions, on les met en vert
             var value = cm[i, j];
             row.Add(i == j ? $"[green]{value}[/]" : value.ToString());
         }
@@ -64,7 +62,6 @@ static void ShowConfusion(EvaluationResult eval)
         table.AddRow(row.ToArray());
     }
 
-    // Ligne totals colonnes
     var totalsRow = new List<string> { "[bold]Total[/]" };
     for (int j = 0; j < n; j++)
         totalsRow.Add($"[bold]{colTotals[j]}[/]");
@@ -97,11 +94,9 @@ try
     AnsiConsole.Write(new FigletText("WheatClassifier").Color(Color.Green));
     AnsiConsole.MarkupLine("[grey]k-NN + KD-Tree | Spectre.Console UI[/]\n");
 
-    // Charger données une seule fois
     var trainPath = Path.Combine(AppContext.BaseDirectory, "DataFiles", "train.csv");
     var testPath = Path.Combine(AppContext.BaseDirectory, "DataFiles", "test.csv");
 
-    // Par défaut : fichiers avec header (tu as corrigé ça)
     var train = CsvLoader.LoadGrains(trainPath, hasHeader: true);
     var test = CsvLoader.LoadGrains(testPath, hasHeader: true);
 

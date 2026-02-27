@@ -3,8 +3,8 @@
 public sealed class Farm : IReportable
 {
     public string Name { get; }
-    public Farmer Owner { get; }                 // 1 ferme -> 1 fermier (composition)
-    public IReadOnlyList<GrainLot> Lots => _lots; // 1 ferme -> 0..* lots
+    public Farmer Owner { get; }                 
+    public IReadOnlyList<GrainLot> Lots => _lots; 
 
     private readonly List<GrainLot> _lots = new();
 

@@ -23,7 +23,7 @@ namespace WheatClassifier.Data
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 HasHeaderRecord = hasHeader,
-                Delimiter = ";", // change en "\t" ou " " si ton fichier n'est pas séparé par virgules
+                Delimiter = ";",
                 BadDataFound = null,
                 MissingFieldFound = null
             };
@@ -34,11 +34,11 @@ namespace WheatClassifier.Data
             using var csv = new CsvReader(reader, config);
 
             if (hasHeader)
-                csv.Read(); // saute le header automatiquement à la 1ère lecture
+                csv.Read(); 
 
             while (csv.Read())
             {
-                // On lit 7 features obligatoires
+
                 double ReadDouble(int index)
                 {
                     var s = csv.GetField(index);

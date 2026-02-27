@@ -15,7 +15,7 @@ namespace WheatClassifier.Data
 
         public double Accuracy { get; set; }
 
-        // Matrice 3x3 sous forme de tableau de tableaux (JSON friendly)
+
         public int[][] ConfusionMatrix { get; set; } = Array.Empty<int[]>();
 
         public string[] LabelsOrder { get; set; } = Array.Empty<string>();

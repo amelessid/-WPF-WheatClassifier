@@ -21,7 +21,6 @@ namespace WheatClassifier.Classification
 
             int axis = depth % GrainFeatures.Dimensions;
 
-            // Tri manuel par l'axe courant
             var sorted = Sorter.MergeSortByKey(points, p => GrainFeatures.Get(p, axis));
 
             int medianIndex = sorted.Count / 2;
@@ -54,7 +53,6 @@ namespace WheatClassifier.Classification
 
             SearchRecursive(Root, target, k, distance, best);
 
-            // retourner juste les points
             var result = new List<Grain>(best.Count);
             for (int i = 0; i < best.Count; i++)
                 result.Add(best[i].Point);
@@ -82,7 +80,6 @@ namespace WheatClassifier.Classification
 
             SearchRecursive(near, target, k, distance, best);
 
-            // On explore l'autre branche seulement si elle peut contenir un meilleur voisin
             double worstDist = best.Count < k ? double.PositiveInfinity : best[best.Count - 1].Dist;
             if (Math.Abs(diff) < worstDist)
             {
@@ -90,17 +87,14 @@ namespace WheatClassifier.Classification
             }
         }
 
-        // Maintient best trié par distance (croissant), sans utiliser Sort()
         private static void InsertBest(List<Neighbor> best, Neighbor candidate, int k)
         {
-            // insertion triée
             int pos = 0;
             while (pos < best.Count && best[pos].Dist <= candidate.Dist)
                 pos++;
 
             best.Insert(pos, candidate);
 
-            // garder seulement k éléments
             if (best.Count > k)
                 best.RemoveAt(best.Count - 1);
         }
