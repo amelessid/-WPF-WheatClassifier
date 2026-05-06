@@ -1,36 +1,47 @@
-# WheatClassifier WPF
+# 🌾 WheatClassifier WPF
 
-Application développée en C# avec WPF utilisant l’architecture MVVM et l’algorithme k-NN pour la classification automatique des grains de blé.
+Application développée en **C#** avec **WPF** utilisant l’architecture **MVVM** et l’algorithme **k-NN** pour la classification automatique des grains de blé.
 
-## Fonctionnalités
+---
 
-- Chargement des fichiers CSV
-- Classification avec l’algorithme k-NN
-- Choix du paramètre k
-- Distance Euclidienne et Manhattan
-- Interface graphique WPF
-- Sauvegarde des expériences avec Entity Framework Core
-- Intégration d’une API REST
+## 🚀 Fonctionnalités
 
-## Technologies utilisées
+✔️ Chargement des fichiers CSV  
+✔️ Classification avec l’algorithme k-NN  
+✔️ Choix du paramètre `k`  
+✔️ Distance Euclidienne et Manhattan  
+✔️ Interface graphique WPF  
+✔️ Sauvegarde des expériences avec Entity Framework Core  
+✔️ Intégration d’une API REST  
 
-- C#
-- WPF
-- MVVM
-- Entity Framework Core
-- SQLite
-- API REST
+---
 
-## Structure du projet
+## 🛠️ Technologies utilisées
 
-- Models
-- Views
-- ViewModels
-- Services
-- Data
+- **C#**
+- **WPF**
+- **MVVM**
+- **Entity Framework Core**
+- **SQLite**
+- **API REST**
 
-## Auteurs
+---
 
-- Amel ESSID
-- Lobna LABIDI
-Machine Learning student
+## 📂 Structure du projet
+
+```text
+WheatClassifier.Wpf
+│
+├── Models
+├── Views
+├── ViewModels
+├── Services
+└── Data
+```
+
+---
+
+## 👩‍💻 Auteurs
+
+- **Amel ESSID**
+- **Lobna LABIDI**
