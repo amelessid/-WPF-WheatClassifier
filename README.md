@@ -33,3 +33,4 @@ Application développée en C# avec WPF utilisant l’architecture MVVM et l’a
 
 - Amel ESSID
 - Lobna LABIDI
+Machine Learning student
