@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="WheatClassifier.Wpf/WheatClassifier.Wpf.csproj" Id="5ab28c1b-fe3d-49fa-bf4d-84763a60ac8f" />
   <Project Path="WheatClassifier/WheatClassifier.csproj" />
 </Solution>
